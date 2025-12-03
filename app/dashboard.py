@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -15,8 +15,8 @@ warnings.filterwarnings('ignore')
 # PAGE CONFIG
 # ====================
 st.set_page_config(
-    page_title="💊 Advanced Drug Response Prediction",
-    page_icon="🧬",
+    page_title="?? Advanced Drug Response Prediction",
+    page_icon="??",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -75,27 +75,27 @@ st.markdown("""
 # ====================
 with st.sidebar:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.title("🧬 Advanced Drug Discovery")
+    st.title("?? Advanced Drug Discovery")
     st.markdown("</div>", unsafe_allow_html=True)
     
     st.markdown("""
-    ### 🔬 Interactive Exploration
+    ### ?? Interactive Exploration
     Multi-omics biomarkers & drug efficacy
     
     *Features:*
-    • Differential Expression Analysis
-    • Dose-Response Modeling
-    • Biomarker Correlation Networks
-    • 3D Multi-omics Landscapes
-    • ML Drug Response Predictor
+    � Differential Expression Analysis
+    � Dose-Response Modeling
+    � Biomarker Correlation Networks
+    � 3D Multi-omics Landscapes
+    � ML Drug Response Predictor
     """)
     
     st.markdown("---")
-    st.markdown("### ⚙ Analysis Parameters")
+    st.markdown("### ? Analysis Parameters")
     
     # Interactive controls
     p_value_threshold = st.slider(
-        "🔬 P-value Threshold",
+        "?? P-value Threshold",
         min_value=0.001,
         max_value=0.05,
         value=0.001,
@@ -104,7 +104,7 @@ with st.sidebar:
     )
     
     fold_change_threshold = st.slider(
-        "📊 Fold Change Threshold",
+        "?? Fold Change Threshold",
         min_value=1.0,
         max_value=3.0,
         value=1.5,
@@ -114,16 +114,16 @@ with st.sidebar:
     
     # Drug selection
     selected_drug = st.selectbox(
-        "💊 Select Drug",
+        "?? Select Drug",
         ["Erlotinib", "Gefitinib", "Afatinib", "Osimertinib"],
         help="Choose drug for dose-response analysis"
     )
     
     # Model parameters
     st.markdown("---")
-    st.markdown("### 🤖 ML Model Settings")
+    st.markdown("### ?? ML Model Settings")
     n_trees = st.slider(
-        "🌲 Number of Trees",
+        "?? Number of Trees",
         min_value=50,
         max_value=500,
         value=100,
@@ -132,7 +132,7 @@ with st.sidebar:
     )
     
     st.markdown("---")
-    st.markdown("#### 👨‍🔬 Developer")
+    st.markdown("#### ????? Developer")
     st.markdown("Name: Freedom Evbakoe Amenaghawon")
     st.markdown("GitHub: [@famenaghawon](https://github.com/famenaghawon)")
     st.markdown("ORCID: [0009-0003-1457-809X](https://orcid.org/0009-0003-1457-809X)")
@@ -263,44 +263,44 @@ model, model_accuracy, feature_importance = train_drug_response_model(gene_data,
 # ====================
 # MAIN DASHBOARD
 # ====================
-st.markdown('<h1 class="main-title">💊 ADVANCED DRUG RESPONSE PREDICTION SYSTEM</h1>', unsafe_allow_html=True)
-st.markdown('<p class="sub-title">Multi-Omics Integration • Machine Learning • Precision Oncology</p>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">?? ADVANCED DRUG RESPONSE PREDICTION SYSTEM</h1>', unsafe_allow_html=True)
+st.markdown('<p class="sub-title">Multi-Omics Integration � Machine Learning � Precision Oncology</p>', unsafe_allow_html=True)
 
 # Top Metrics
 col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.metric("🧬 Genes", "500", "+42 significant")
+    st.metric("?? Genes", "500", "+42 significant")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.metric("💊 Drugs", "4", "+8 cell lines")
+    st.metric("?? Drugs", "4", "+8 cell lines")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col3:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.metric("🤖 ML Accuracy", f"{model_accuracy*100:.1f}%", f"+{n_trees} trees")
+    st.metric("?? ML Accuracy", f"{model_accuracy*100:.1f}%", f"+{n_trees} trees")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col4:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.metric("👨‍⚕ Patients", "100", "Clinical data")
+    st.metric("???? Patients", "100", "Clinical data")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col5:
     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-    st.metric("🎯 Biomarkers", f"{gene_data['significant'].sum()}", f"p<{p_value_threshold}")
+    st.metric("?? Biomarkers", f"{gene_data['significant'].sum()}", f"p<{p_value_threshold}")
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Create tabs
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "📈 Volcano Plot", 
-    "🧪 Dose-Response", 
-    "🔗 Correlation", 
-    "🌐 3D Landscape", 
-    "🤖 ML Predictor",
-    "👨‍⚕ Clinical Data"
+    "?? Volcano Plot", 
+    "?? Dose-Response", 
+    "?? Correlation", 
+    "?? 3D Landscape", 
+    "?? ML Predictor",
+    "???? Clinical Data"
 ])
 
 # TAB 1: Volcano Plot
@@ -324,8 +324,8 @@ with tab1:
                         color_discrete_map=pathway_colors,
                         title=f'<b>Volcano Plot: Differential Gene Expression</b><br>P < {p_value_threshold}, |FC| > {fold_change_threshold}',
                         labels={
-                            'log2_fold_change': 'Log₂ Fold Change',
-                            '-log10_p': '-Log₁₀(P-value)',
+                            'log2_fold_change': 'Log2 Fold Change',
+                            '-log10_p': '-Log10(P-value)',
                             'pathway': 'Biological Pathway'
                         },
                         template='plotly_dark')
@@ -347,14 +347,14 @@ with tab1:
                 x=1.02
             )
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width='stretch'))
     
     with col2:
-        st.markdown("### 📊 Statistics")
+        st.markdown("### ?? Statistics")
         
         st.markdown(f"""
         <div class="highlight">
-        🎯 *Significant Biomarkers:* {gene_data['significant'].sum()}
+        ?? *Significant Biomarkers:* {gene_data['significant'].sum()}
         </div>
         """, unsafe_allow_html=True)
         
@@ -362,26 +362,26 @@ with tab1:
         st.metric("Drug Targets", gene_data['drug_target'].sum())
         st.metric("Mean Fold Change", f"{gene_data['log2_fold_change'].abs().mean():.2f}")
         
-        st.markdown("### 🏆 Top 5 Biomarkers")
+        st.markdown("### ?? Top 5 Biomarkers")
         top_biomarkers = gene_data.nlargest(5, 'expression_level')[[
             'gene_name', 'log2_fold_change', 'p_value', 'pathway'
         ]]
         top_biomarkers['p_value'] = top_biomarkers['p_value'].apply(lambda x: f"{x:.2e}")
-        st.dataframe(top_biomarkers, use_container_width=True)
+        st.dataframe(top_biomarkers, width='stretch')
         
         # Download options
         col_d1, col_d2 = st.columns(2)
         with col_d1:
             st.download_button(
-                label="📥 CSV Data",
+                label="?? CSV Data",
                 data=gene_data.to_csv(index=False),
                 file_name="biomarker_data.csv",
                 mime="text/csv",
-                use_container_width=True
+                use_container_width='stretch')
             )
         
         with col_d2:
-            if st.button("📊 Generate Report", use_container_width=True):
+            if st.button("?? Generate Report", use_container_width='stretch')):
                 st.success("Report generated! Check downloads folder.")
 
 # TAB 2: Dose-Response
@@ -412,16 +412,16 @@ with tab2:
             name=cl,
             line=dict(color=sensitivity_colors.get(sensitivity, '#636EFA'), width=3),
             hovertemplate='<b>%{fullData.name}</b><br>' +
-                         'Conc: %{x:.3f} µM<br>' +
+                         'Conc: %{x:.3f} �M<br>' +
                          'Viability: %{y:.1f}%<br>' +
-                         'IC50: %{customdata:.3f} µM<br>' +
+                         'IC50: %{customdata:.3f} �M<br>' +
                          'Sensitivity: ' + sensitivity + '<extra></extra>',
             customdata=cl_data['ic50_estimated']
         ))
     
     fig.update_layout(
         title=f'<b>{selected_drug} Response Curves</b>',
-        xaxis_title='Drug Concentration (µM, log scale)',
+        xaxis_title='Drug Concentration (�M, log scale)',
         yaxis_title='Cell Viability (%)',
         xaxis_type='log',
         template='plotly_dark',
@@ -436,22 +436,22 @@ with tab2:
         )
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width='stretch'))
     
     # IC50 Analysis
     col_ic1, col_ic2 = st.columns(2)
     
     with col_ic1:
-        st.subheader("📊 IC50 Summary")
+        st.subheader("?? IC50 Summary")
         ic50_summary = plot_df.groupby(['cell_line', 'sensitivity']).agg({
             'ic50_estimated': ['first', 'std'],
             'viability': 'mean'
         }).round(3)
-        ic50_summary.columns = ['IC50 (µM)', 'IC50 Std', 'Avg Viability']
-        st.dataframe(ic50_summary, use_container_width=True)
+        ic50_summary.columns = ['IC50 (�M)', 'IC50 Std', 'Avg Viability']
+        st.dataframe(ic50_summary, use_container_width='stretch'))
     
     with col_ic2:
-        st.subheader("🎯 Sensitivity Distribution")
+        st.subheader("?? Sensitivity Distribution")
         
         # Bar chart of sensitivities
         sensitivity_counts = plot_df.groupby('sensitivity').size()
@@ -464,7 +464,7 @@ with tab2:
             title='Cell Line Sensitivity Distribution'
         )
         fig_bar.update_layout(template='plotly_dark', showlegend=False)
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, use_container_width='stretch'))
 
 # TAB 3: Correlation Matrix
 with tab3:
@@ -507,10 +507,10 @@ with tab3:
         xaxis=dict(tickangle=45)
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
     # Network graph option
-    if st.button("🕸 Generate Network Graph"):
+    if st.button("?? Generate Network Graph"):
         st.info("Network visualization would show gene-gene interactions")
 
 # TAB 4: 3D Landscape
@@ -559,11 +559,11 @@ with tab4:
         )
     )
     
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # TAB 5: ML Predictor - FIXED VERSION
 with tab5:
-    st.header("🤖 Machine Learning Drug Response Predictor")
+    st.header("?? Machine Learning Drug Response Predictor")
     st.markdown("Predict IC50 values based on gene expression profiles")
     
     col_ml1, col_ml2 = st.columns([3, 1])
@@ -576,7 +576,7 @@ with tab5:
             st.session_state.gene_values_initialized = True
         
         # Create input sliders for gene features
-        st.subheader("🧬 Input Gene Expression Features")
+        st.subheader("?? Input Gene Expression Features")
         
         # Create a grid of sliders
         cols = st.columns(5)
@@ -601,10 +601,10 @@ with tab5:
         col_btn1, col_btn2 = st.columns(2)
         
         with col_btn1:
-            predict_btn = st.button("🎯 Predict Drug Response", type="primary", use_container_width=True)
+            predict_btn = st.button("?? Predict Drug Response", type="primary", use_container_width='stretch'))
         
         with col_btn2:
-            random_btn = st.button("🎲 Randomize Inputs", use_container_width=True)
+            random_btn = st.button("?? Randomize Inputs", use_container_width='stretch'))
             
             if random_btn:
                 # Update session state with random values
@@ -618,14 +618,14 @@ with tab5:
             prediction = model.predict(X_input)[0]
             
             # Display prediction with animation
-            st.success("✅ *Prediction Complete!*")
+            st.success("? *Prediction Complete!*")
             
             # Create metrics display
             pred_col1, pred_col2, pred_col3 = st.columns(3)
             
             with pred_col1:
                 st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-                st.metric("Predicted IC50", f"{prediction:.2f} µM")
+                st.metric("Predicted IC50", f"{prediction:.2f} �M")
                 st.markdown('</div>', unsafe_allow_html=True)
             
             with pred_col2:
@@ -633,19 +633,19 @@ with tab5:
                 if prediction < 0.5:
                     sensitivity = "Highly Sensitive"
                     color = "#00CC96"
-                    emoji = "🎯"
+                    emoji = "??"
                 elif prediction < 2.0:
                     sensitivity = "Sensitive"
                     color = "#4ECDC4"
-                    emoji = "✅"
+                    emoji = "?"
                 elif prediction < 5.0:
                     sensitivity = "Intermediate"
                     color = "#FFA15A"
-                    emoji = "⚠"
+                    emoji = "?"
                 else:
                     sensitivity = "Resistant"
                     color = "#EF553B"
-                    emoji = "❌"
+                    emoji = "?"
                 
                 st.markdown(f'<div class="metric-card" style="background: linear-gradient(135deg, {color}22 0%, {color}44 100%);">', unsafe_allow_html=True)
                 st.metric(f"{emoji} Response", sensitivity)
@@ -658,7 +658,7 @@ with tab5:
                 st.markdown('</div>', unsafe_allow_html=True)
             
             # Feature importance visualization
-            st.subheader("📊 Feature Importance")
+            st.subheader("?? Feature Importance")
             
             fig_importance = px.bar(
                 feature_importance.head(10),
@@ -670,30 +670,30 @@ with tab5:
                 color_continuous_scale='Viridis'
             )
             fig_importance.update_layout(template='plotly_dark', height=400)
-            st.plotly_chart(fig_importance, use_container_width=True)
+            st.plotly_chart(fig_importance, use_container_width='stretch'))
             
             # Interpretation
             st.info(f"""
             *Interpretation:*
-            - *IC50 Value:* {prediction:.2f} µM indicates the drug concentration needed to inhibit 50% of cell growth
+            - *IC50 Value:* {prediction:.2f} �M indicates the drug concentration needed to inhibit 50% of cell growth
             - *Lower IC50* = More potent drug
             - *Higher IC50* = Less effective drug
-            - *Clinical Relevance:* Values below 1.0 µM are typically considered promising for development
+            - *Clinical Relevance:* Values below 1.0 �M are typically considered promising for development
             """)
     
     with col_ml2:
-        st.markdown("### 🏆 Model Performance")
+        st.markdown("### ?? Model Performance")
         st.metric("Accuracy", f"{model_accuracy*100:.1f}%")
         st.metric("Training Samples", "300")
         st.metric("Features", "15")
         st.metric("Trees", n_trees)
         
         st.markdown("---")
-        st.markdown("### ⚙ Model Details")
+        st.markdown("### ? Model Details")
         st.markdown("""
         *Algorithm:* Random Forest Regressor
         
-        *Target:* IC50 (µM)
+        *Target:* IC50 (�M)
         
         *Features:* Synthetic gene expression
         
@@ -704,7 +704,7 @@ with tab5:
         
         # Model download
         st.markdown("---")
-        if st.button("📥 Download Model", use_container_width=True):
+        if st.button("?? Download Model", use_container_width='stretch'):
             # Save model
             model_bytes = joblib.dumps(model)
             st.download_button(
@@ -712,18 +712,18 @@ with tab5:
                 data=model_bytes,
                 file_name="drug_response_model.pkl",
                 mime="application/octet-stream",
-                use_container_width=True
+                use_container_width='stretch')
             )
 
 # TAB 6: Clinical Data
 with tab6:
-    st.header("👨‍⚕ Clinical Data Analysis")
+    st.header("???? Clinical Data Analysis")
     
     col_clin1, col_clin2 = st.columns(2)
     
     with col_clin1:
         st.subheader("Patient Demographics")
-        st.dataframe(clinical_data.head(10), use_container_width=True)
+        st.dataframe(clinical_data.head(10), use_container_width='stretch'))
         
         # Survival analysis
         fig_survival = px.histogram(
@@ -734,7 +734,7 @@ with tab6:
             color='treatment_response',
             template='plotly_dark'
         )
-        st.plotly_chart(fig_survival, use_container_width=True)
+        st.plotly_chart(fig_survival, use_container_width='stretch'))
     
     with col_clin2:
         st.subheader("Clinical Statistics")
@@ -758,7 +758,7 @@ with tab6:
             color_discrete_sequence=px.colors.qualitative.Set3
         )
         fig_pie.update_layout(template='plotly_dark')
-        st.plotly_chart(fig_pie, use_container_width=True)
+        st.plotly_chart(fig_pie, use_container_width='stretch'))
 
 # ====================
 # FOOTER
@@ -766,26 +766,26 @@ with tab6:
 st.markdown("---")
 st.markdown("""
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 15px; color: white;">
-    <h3 style="text-align: center; margin-bottom: 1rem;">🔬 About This Advanced Dashboard</h3>
+    <h3 style="text-align: center; margin-bottom: 1rem;">?? About This Advanced Dashboard</h3>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
         <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
-            <h4>🎯 Scientific Rigor</h4>
+            <h4>?? Scientific Rigor</h4>
             <p>Synthetic data mimics real CCLE/GDSC patterns with proper statistical distributions</p>
         </div>
         
         <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
-            <h4>🤖 ML Integration</h4>
+            <h4>?? ML Integration</h4>
             <p>Random Forest model predicts drug response with interpretable feature importance</p>
         </div>
         
         <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
-            <h4>📊 Multi-Omics</h4>
+            <h4>?? Multi-Omics</h4>
             <p>Integrates gene expression, drug response, and clinical data for holistic analysis</p>
         </div>
         
         <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
-            <h4>🚀 Deployment Ready</h4>
+            <h4>?? Deployment Ready</h4>
             <p>Fully compatible with Streamlit Cloud for instant web deployment</p>
         </div>
     </div>
@@ -794,16 +794,16 @@ st.markdown("""
 
 st.markdown("""
     <div style="text-align: center; margin-top: 2rem;">
-        <p><strong>Advanced Drug Response Prediction System v2.0</strong> • Developed by Freedom Evbakoe Amenaghawon</p>
-        <p>ORCID: 0009-0003-1457-809X • GitHub: @famenaghawon • Email: f.e.amenaghawon@gmail.com • LinkedIn: famenaghawon</p>
-        <p style="color: #666; font-size: 0.9rem;">For research and educational purposes • Precision Oncology Pipeline</p>
+        <p><strong>Advanced Drug Response Prediction System v2.0</strong> � Developed by Freedom Evbakoe Amenaghawon</p>
+        <p>ORCID: 0009-0003-1457-809X � GitHub: @famenaghawon � Email: f.e.amenaghawon@gmail.com � LinkedIn: famenaghawon</p>
+        <p style="color: #666; font-size: 0.9rem;">For research and educational purposes � Precision Oncology Pipeline</p>
     </div>
     """, unsafe_allow_html=True)
 
 # ====================
 # DEPLOYMENT SECTION
 # ====================
-with st.expander("🚀 Ready to Deploy to Streamlit Cloud?"):
+with st.expander("?? Ready to Deploy to Streamlit Cloud?"):
     st.markdown("""
     ### Deployment Instructions:
     
@@ -831,15 +831,15 @@ with st.expander("🚀 Ready to Deploy to Streamlit Cloud?"):
     - Streamlit Cloud account (free)
     """)
     
-    if st.button("🚀 Deploy Now", type="primary"):
+    if st.button("?? Deploy Now", type="primary"):
         st.balloons()
         st.success("""
         Ready for deployment! Follow the steps above to deploy your advanced dashboard.
         
         Your app features:
-        • Interactive visualizations
-        • Machine learning predictions
-        • Clinical data integration
-        • Professional design
-        • Mobile responsive
+        � Interactive visualizations
+        � Machine learning predictions
+        � Clinical data integration
+        � Professional design
+        � Mobile responsive
         """)

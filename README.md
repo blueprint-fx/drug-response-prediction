@@ -112,7 +112,7 @@ data = generate_drug_response_data(
 📦 Installation
 
 # Clone repository
-git clone https://github.com/blueprint-fx/drug-response-prediction
+git clone https://github.com/famenaghawon/drug-response-prediction
 cd drug-response-prediction
 
 # Create virtual environment
@@ -249,7 +249,7 @@ If you use this project in your research, please cite:
   title = {Advanced Drug Response Prediction Pipeline},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/blueprint-fx/drug-response-prediction},
+  url = {https://github.com/famenaghawon/drug-response-prediction},
   version = {2.0},
   doi = {10.5281/zenodo.xxxxxxx}
 }
